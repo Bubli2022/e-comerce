@@ -285,4 +285,18 @@ padding: 1.5rem 2rem;
     font-size: 2rem;
   }*/
 }
+@media screen and (min-width: 780px){
+  .home-conteiner{
+    position: relative;
+    row-gap: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .text-home{
+
+    margin-top: 130px;
+
+  }
+}
   
