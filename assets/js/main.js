@@ -24,3 +24,33 @@ const items = [
       quantity: 20
     }
   ]
+  document.addEventListener ("DOMContentLoaded", ()=>{
+    console.log("dom cargado");
+  })
+
+  const themeIcon= document.getElementById("moon-btn");
+
+  themeIcon.addEventListener ("click",()=>{
+     document.body.classList.toggle("dark");
+     if( themeIcon.classList.contains("bx-moon") ){
+      themeIcon.classList.replace("bx-moon", "bx-sun")
+  }else{
+      themeIcon.classList.replace("bx-sun", "bx-moon")
+  }
+ 
+  });
+  
+  //----LOADER
+
+  const loadComponent = () => {
+    const loader = document.getElementById( "loader" )
+
+    setTimeout(() => {
+        loader.classList.add( "hide" )
+    }, 3000);
+}
+
+
+document.addEventListener( "DOMContentLoaded", () =>{
+    loadComponent() 
+})
