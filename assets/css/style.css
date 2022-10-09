@@ -97,18 +97,25 @@ body.dark{
   flex-direction: column-reverse;
   height: 60px;
   position: fixed;
-  width: 95%;
+  width: 100%;
   top: 0;
   left: 0;
  z-index: 100;
- margin: 5px;
+ transition: .5s;
+}
+.header.scrollear{
+  background-color: var(--body-color);
+  color:var(--text-color);
+  transition: .5s;
+  border-bottom: 1px solid var(--text-color-light);
+box-shadow: 2px 2px 5px #999;
 }
 .icon-box{
     
   display: flex;
   align-items: center;
   column-gap: 1rem;
- 
+  margin-right: 20px;
 }
 .logo-nav{
   color: var(--first-color);
@@ -172,24 +179,17 @@ box-shadow: 2px 2px 5px #999;*/
   border: none;
   font-size: 1rem;
 }
-.bx-menu{
+.bx-menu, .bx-cart, .bx-moon, .bx-sun{
   font-size: 1.5rem;
   cursor: pointer;
-}
-.bx-cart{
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.bx-moon{
-  font-size: 1.5rem;
-  cursor: pointer;
+  color:var(--text-color);
 }
 .bx-sun::before{
   font-size: 1.5rem;
 }
 .count-cart{
-  background-color: rgb(0 0 0);
-  color: rgb(255 255 255);
+  background-color: var(--title-color);
+  color: var(--body-color);
   position: absolute;
   bottom: 0px;
   right: -7px;
@@ -200,7 +200,7 @@ box-shadow: 2px 2px 5px #999;*/
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 33px;
+  right: 54px;
   bottom: 12px;
 }
 
