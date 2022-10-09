@@ -148,7 +148,7 @@ box-shadow: 2px 2px 5px #999;*/
 .nav-menu-link{
   text-decoration: none;
   font-size: 1.5rem;
-  text-transform: uppercase;
+  
 }
 .text-color1{
   color:var(--first-color);
@@ -369,7 +369,7 @@ button {
   .nav-menu-link{
     text-decoration: none;
     font-size: 1rem;
-    text-transform: lowercase;
+    
   }
   .menu-burger{
     display: none;
