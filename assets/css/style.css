@@ -38,7 +38,7 @@
   box-sizing: border-box;
 }
 body{
-  font-family: var(--body-color);
+  font-family: var(--body-font);
  background-color: var(--body-color);
  color:var(--text-color);
  transition: 0.5s;
@@ -238,14 +238,18 @@ box-shadow: 2px 2px 5px #999;*/
   width: 300px;
   height: 310px;
 }
-
+.home-data{
+  margin-left: 1.5rem ;
+}
 .home-title{
-      font-size: 2rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 h1{
   color: var(--title-color);
+  font-weight: 500;
+  
 }
 .home-description{
   margin-bottom: 1.5rem;
