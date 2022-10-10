@@ -336,6 +336,7 @@ button {
    right: -155px;
    top: 45px;
    font-size: 2rem;
+   transition: 0.5s;
 }
 
 /*.bx-shoping-bag {
@@ -356,25 +357,25 @@ button {
 }*/
 .empty--cart {
    width: 300px;
+ 
 }
 .close--cart > p {
    padding: 1rem 2rem;
+  
 }
 .cart--container {
    display: flex;
    flex-direction: column;
    align-items: center;
    text-align: center;
+ 
 }
 
-nav {
-   padding: 1rem 1.5rem;
-   display: flex;
-   justify-content: end;
-}
+
 
 .nav--cart {
    position: relative;
+ 
 }
 
 .counter {
@@ -391,6 +392,7 @@ nav {
    position: absolute;
    bottom: -5px;
    right: -5px;
+  
 }
 
 .cart--container {
@@ -399,11 +401,14 @@ nav {
    background-color: var(--text-color);
    position: fixed;
    top: 0;
-   left: 0;
+   left: 100%;
+   transition: 0.5s;
+ 
 }
 
 .cart--container.hide {
-   display: none;
+  left:0%;
+  transition: 0.5s;
 }
 
 .cart {
@@ -412,19 +417,25 @@ nav {
    background-color: var(--container-color);
    position: absolute;
    top: 0;
-   max-width: 400px;
+  /* max-width: 400px;*/
    right: 0;
-   box-shadow: -4px 5px 10px var(--text-color-light);
+  /* box-shadow: -4px 5px 10px var(--text-color-light);*/
+  
 }
 
 .close--cart {
    font-size: 1rem;
-   position: absolute;
+ 
    top: 1rem;
    right: 1.5rem;
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding-top: 3rem;
+   transition: 0.5s;
+}
+.boton-x{
+   margin-bottom: 4rem;
 }
 
 .product-card {
@@ -444,9 +455,10 @@ nav {
    top: 457px;
 }
 .checkout--btn {
-   position: absolute;
+   
    right: 46px;
    top: 510px;
+ 
 }
 
 
@@ -489,7 +501,7 @@ nav {
    font-size: 16px;
  }
  
- img{
+ .img-buzo-lista{
    height: 200px;
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;

@@ -87,13 +87,13 @@ const shopCloseIcon = document.getElementById('close-cart')
 
 //Cuando ocurre un click sobre el icono de la tienda, quita la clase hide al elemento 'cart'
 //para volverlo visible
-shopIcon.addEventListener('click', () => {
-   cart.classList.remove('hide')
-})
 
+shopIcon.addEventListener('click', () => {
+  cart.classList.add('hide')
+})
 //Cuando detecta un click sobre el icono de cerrar, añade de nuevo la clase 'hide' al elemento 'cart' para ocultarlo
 shopCloseIcon.addEventListener('click', () => {
-   cart.classList.add('hide')
+  cart.classList.remove('hide')
 })
 
 /* ----------------------MOSTRAR LISTADO DE PRODUCTOS--------------------------- */
