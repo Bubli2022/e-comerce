@@ -147,6 +147,7 @@ body.dark {
    top: 60px;
    left: 100%;
    transition: 0.5s;
+   text-transform: uppercase;
 }
 .nav-menu.visible {
    left: 0%;
@@ -708,7 +709,17 @@ ul {
       margin-top: 0;
       margin-bottom: 0;
       margin-right: 10px;
+      text-transform: lowercase;
    }
+   .nav-menu-item1::first-letter{
+    text-transform: uppercase;
+  }
+  .nav-menu-item2{
+    text-transform: lowercase;
+  }
+  .nav-menu-item2::first-letter{
+    text-transform: uppercase;
+  }
    .nav-menu-link {
       text-decoration: none;
       font-size: 1rem;
