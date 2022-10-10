@@ -449,6 +449,119 @@ nav {
    top: 510px;
 }
 
+
+/* Buzo */
+.section-flitro{
+   
+   display: grid;
+   justify-content: space-between;
+   text-align: center;
+   grid-template-columns: repeat(2, 1fr);
+   max-width: 360px;
+   margin: auto;
+   padding: 60px 0 0 0;
+ }
+ .div-filtro{
+   padding: 10px;
+ }
+ 
+ .section-buzo{
+   margin-top: 2rem;
+   width: 100%;
+   display: grid;
+   justify-content: center;
+   text-align: left;
+   gap: 2rem;
+ }
+ h3, small{
+   display: inline;
+   justify-content: center;
+ }
+ 
+ .div-texto__buzo > h3, h4{
+   color: var(--title-color);
+ }
+ 
+ .div-texto__buzo > h3{
+   font-size: 20px;
+ }
+ .div-texto__buzo > h4{
+   font-size: 16px;
+ }
+ 
+ img{
+   height: 200px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   background-color: var(--text-color-light);
+ }
+ .div-texto__buzo{
+   
+   padding: 1rem;
+   background-color: var(--container-color);
+ }
+ 
+ .div-buzo{
+   position: relative;
+ }
+ 
+ .button-buzo{
+   border: none;
+   border-radius: 50%;
+   padding: 10px;
+   display: inline-flex;
+   font-size: 20px;
+   position: absolute;
+   right: 10px;
+   top: 181px;
+   background-color: var(--body-color);
+   color: var(--title-color);
+   box-shadow: 0 4px 12px hsl(206deg 4% 4% / 20%);
+ }
+ 
+ @media screen and (min-width: 600px) {
+   main{
+     padding: 1rem 4.5rem;
+   }
+ }
+ 
+ @media screen and (min-width: 768px) {
+     .section-flitro{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      justify-content: end;
+      align-items: center;
+      max-width: 680px;
+      margin: 0;
+     }
+ 
+     .section-buzo{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: start;
+      align-items: center;
+      max-width: 300px;
+      padding: 60px 0 0 0;
+     } 
+ 
+     .div-buzo{
+       margin: auto;
+       justify-content: start;
+     }
+ 
+ }
+
+ @media screen and (min-width: 1130px){
+   .section-flitro{
+      max-width: 860px;
+   }
+
+   .section-buzo{
+      gap: 8rem;
+   }
+ }
+
 /*=================FOOTER==================== */
 footer {
    background-color: var(--card-color);
