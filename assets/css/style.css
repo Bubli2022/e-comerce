@@ -215,22 +215,7 @@ body.dark {
 .bx-sun::before {
    font-size: 1.5rem;
 }
-/*.count-cart {
-   background-color: var(--title-color);
-   color: var(--body-color);
-   position: absolute;
-   bottom: 0px;
-   right: -7px;
-   width: 16px;
-   height: 16px;
-   border-radius: 50%;
-   font-size: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   right: 54px;
-   bottom: 12px;
-}*/
+
 
 /*========================HOME==============================*/
 .main {
@@ -435,6 +420,27 @@ button {
    padding-top: 3rem;
    transition: 0.5s;
 }
+.products-aside{
+   display: flex;
+   align-items: center;
+   padding-top: 2rem;
+}
+.elements-cart{
+ padding-top: 3rem;
+ display: initial;
+}
+.elements-cart.open{
+   display: none;
+  }
+  .cont-btn-sumaresta{
+   display: flex;
+   justify-content: space-evenly;
+
+  }
+.img-cart{
+   width: 100px;
+    height: 100px;
+}
 .boton-x{
    margin-bottom: 4rem;
 }
@@ -463,7 +469,7 @@ button {
 }
 
 
-/* Buzo */
+/*-------------- Buzo */
 .section-flitro{
    
    display: grid;
@@ -534,48 +540,9 @@ button {
  
 
  
- @media screen and (min-width: 768px) {
-     .section-flitro{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      justify-content: end;
-      align-items: center;
-      max-width: 680px;
-      margin: 0;
-     }
- 
-     .section-buzo{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-content: start;
-      align-items: center;
-      max-width: 300px;
-      padding: 60px 0 0 0;
-     } 
- 
-     .div-buzo{
-       margin: auto;
-       justify-content: start;
-     }
-   
-  .home{
-   padding: 0 6rem;
-  }
-  .icon-box{
-   padding-right: 6rem;
-  }
- }
 
- @media screen and (min-width: 1130px){
-   .section-flitro{
-      max-width: 860px;
-   }
 
-   .section-buzo{
-      gap: 8rem;
-   }
- }
+
 
 /*=================FOOTER==================== */
 footer {
@@ -682,6 +649,36 @@ ul {
 }
 
 @media screen and (min-width: 780px) {
+   .section-flitro{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      justify-content: end;
+      align-items: center;
+      max-width: 680px;
+      margin: 0;
+     }
+ 
+     .section-buzo{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: start;
+      align-items: center;
+      max-width: 300px;
+      padding: 60px 0 0 0;
+     } 
+ 
+     .div-buzo{
+       margin: auto;
+       justify-content: start;
+     }
+   
+  .home{
+   padding: 0 6rem;
+  }
+  .icon-box{
+   padding-right: 6rem;
+  }
    .home-conteiner {
       position: relative;
       row-gap: 2.5rem;
@@ -734,3 +731,13 @@ ul {
       right: -24px;
    }
 }
+
+@media screen and (min-width: 1130px){
+   .section-flitro{
+      max-width: 860px;
+   }
+
+   .section-buzo{
+      gap: 8rem;
+   }
+ }

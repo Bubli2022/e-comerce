@@ -20,7 +20,7 @@ const items = [
       name: 'Sweatshirts',
       price: 24.0,
       image: 'assets/images/featured3.png',
-      category: 'shirts',
+      category: 'Sweatshirts',
       quantity: 20,
    },
 ]
@@ -72,7 +72,7 @@ const headerMenu = document.getElementById('header')
 
 window.addEventListener('scroll', function () {
    const ubicacionActual = window.scrollY
-   console.log(ubicacionActual)
+  
    if (ubicacionPrincipal >= ubicacionActual) {
       headerMenu.classList.remove('scrollear')
    } else {
@@ -81,7 +81,7 @@ window.addEventListener('scroll', function () {
 })
 
 /*=================VISTA CARRITO DE COMPRAS========================*/
-const cart = document.getElementById('cart-container')
+const caart = document.getElementById('cart-container')
 const shopIcon = document.getElementById('cart-shop')
 const shopCloseIcon = document.getElementById('close-cart')
 
@@ -89,27 +89,34 @@ const shopCloseIcon = document.getElementById('close-cart')
 //para volverlo visible
 
 shopIcon.addEventListener('click', () => {
-  cart.classList.add('hide')
+  caart.classList.add('hide')
 })
 //Cuando detecta un click sobre el icono de cerrar, añade de nuevo la clase 'hide' al elemento 'cart' para ocultarlo
 shopCloseIcon.addEventListener('click', () => {
-  cart.classList.remove('hide')
+  caart.classList.remove('hide')
 })
 
 /* ----------------------MOSTRAR LISTADO DE PRODUCTOS--------------------------- */
 // contenedor.innerHTML = "html"
 const showProducts = () => {
-   const productContainer = document.getElementById('products-list')
+   const productContainer = document.getElementById('section-buzo')
 
    let fragment = ``
 
    items.forEach((producto) => {
       fragment += `
+      <div class="div-buzo">
        <div class="product-card" id="${producto.id}">
-           <img src="https://picsum.photos/200" alt="">
+       <div class="cart__box" >
+       <img src="${producto.image}" alt="" class="img-buzo-lista">
+     </div class="text-descript-info"> 
            <p>${producto.name}</p>
-           <button class="btn-add">ADD</button>
+           <p>$${producto.price}</p>
+           <button class="button-buzo">
+           +
+           </button>
        </div>
+      </div> 
         `
    })
 
@@ -120,47 +127,80 @@ const showProducts = () => {
 
 /* ---------------------AÑADE FUNCIONALIDAD A LOS BOTONES EN LOS PRODUCTOS--------------------------- */
 function cartFunctionality() {
-   /* Obtiene todos los botones de los productos */
-   const btns = document.querySelectorAll('.btn-add')
+  
+   const btns = document.querySelectorAll('.button-buzo')
    const cart = []
-
-   //Añade un eventListener a cada boton para detectar un click
+   let contCarrito=0;
+   let contItems=0;
+   const counter=document.getElementById("cart-counter")
+   const countItems=document.getElementById("count--items")
    btns.forEach((button) => {
+     
       button.addEventListener('click', (e) => {
-         //Obtiene el id del elemento que sufrio el click
+         
          const id = parseInt(e.target.parentElement.id)
-         //Encuentra al elemento seleccionado en el arreglo de productos
-         const selectedProduct = items.find((item) => item.id === id)
+        
+         contCarrito++
+        contItems++
+       
+   const selectedProduct = items.find((item) => item.id === id)
 
-         //Determina si ese producto ya fue seleccionado de forma previa. (Determina si el producto ya existe en el carrito)
-         let index = cart.indexOf(selectedProduct)
-
-         //Sí index es DISTINTO de -1 entonces el producto ya existe en el carrito. Fue seleccionado antes
+       
+        let index= cart.indexOf(selectedProduct)
+       
+   
          if (index !== -1) {
-            //Evalua si hay suficientes productos en stock para que el cliente pueda añadir otro producto a su carrito
+          
             if (cart[index].quantity <= cart[index].cantidad) {
                alert('No hay stock')
             } else {
-               //Si la cantidad de ese producto seleccionado aun no sobrepasa la cantidad de productos disponibles en stock, añade otro producto igual al carrito
                cart[index].cantidad++
+
             }
          } else {
-            //Ese producto aun no existe en el carrito
-
-            //Se añade la propiedad 'cantidad' para representar cuantos productos han sido seleccionados
             selectedProduct.cantidad = 1
-
-            //Se añade al carrito
             cart.push(selectedProduct)
          }
-
-         console.log(cart)
-         showProducts(cart)
+         
+         /*console.log(cart)*/
+         showProductsInCart(cart)
+         counter.innerHTML=contCarrito
+         countItems.innerHTML=contItems
+         console.log(counter);
       })
+     
    })
 }
 
-function showProductsInCart(cart) {}
+
+function showProductsInCart(cart) {
+   console.log(cart)
+   const elementCart=document.getElementById("elements-cart")
+   const carrito=document.getElementById("show-products")
+   let carro=" "
+   cart.forEach((x) => {
+       carro += `
+       <article class="producto-aside">
+              <img class="img-cart"  src=" ${x.image}" alt="">
+               <div class="text-conten" id="${x.id}">
+                   <p>$${x.price} <span>stock:${x.quantity}</span> cant:${x.cantidad}</p>
+                   <h4>${x.name}</h4>
+                 <div class="cont-btn-sumaresta">
+                 <button class="btn-inside-cart">+</button>
+                  <button class="btn-inside-cart">-</  button>
+                 </div> 
+               </div>
+               
+       </article>
+   `
+   })
+   carrito.innerHTML=carro
+   if (carro.length>1){
+      elementCart.classList.add('open')
+   }
+
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
    loadComponent()
