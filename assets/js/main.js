@@ -134,20 +134,20 @@ function cartFunctionality() {
    let contItems=0;
    const counter=document.getElementById("cart-counter")
    const countItems=document.getElementById("count--items")
+  
    btns.forEach((button) => {
      
       button.addEventListener('click', (e) => {
          
          const id = parseInt(e.target.parentElement.id)
-        
          contCarrito++
-        contItems++
+         contItems++
+         
        
    const selectedProduct = items.find((item) => item.id === id)
-
        
         let index= cart.indexOf(selectedProduct)
-       
+     
    
          if (index !== -1) {
           
@@ -161,11 +161,12 @@ function cartFunctionality() {
             selectedProduct.cantidad = 1
             cart.push(selectedProduct)
          }
-         
-         /*console.log(cart)*/
+        
+      
          showProductsInCart(cart)
          counter.innerHTML=contCarrito
          countItems.innerHTML=contItems
+         cartTotal.innerHTML=priceItems
          console.log(counter);
       })
      
@@ -175,7 +176,10 @@ function cartFunctionality() {
 
 function showProductsInCart(cart) {
    console.log(cart)
+   const getTotal=document.getElementById("cart--total")
+   let counterPrice=0;
    const elementCart=document.getElementById("elements-cart")
+   let sumaux=0;
    const carrito=document.getElementById("show-products")
    let carro=" "
    cart.forEach((x) => {
@@ -183,22 +187,33 @@ function showProductsInCart(cart) {
        <article class="producto-aside">
               <img class="img-cart"  src=" ${x.image}" alt="">
                <div class="text-conten" id="${x.id}">
-                   <p>$${x.price} <span>stock:${x.quantity}</span> cant:${x.cantidad}</p>
+                   <p><span class="price-color">$${x.price}</span> <span>stock:${x.quantity}</span> cant:${x.cantidad}</p>
                    <h4>${x.name}</h4>
                  <div class="cont-btn-sumaresta">
                  <button class="btn-inside-cart">+</button>
                   <button class="btn-inside-cart">-</  button>
+                  <button class="btn-trash">
+                  <i class='bx bx-trash'></i>
+                  </button>
                  </div> 
                </div>
                
        </article>
    `
+  
    })
+   console.log(sumaux);
    carrito.innerHTML=carro
    if (carro.length>1){
       elementCart.classList.add('open')
    }
 
+  
+  cart.forEach((y)=>{
+     counterPrice+=+ y.price * y.cantidad
+  })
+  counterPrice="$"+counterPrice
+  getTotal.innerHTML=counterPrice
 }
 
 

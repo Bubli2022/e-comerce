@@ -430,6 +430,17 @@ button {
    right: 46px;
    top: 510px;
 }
+.producto-aside{
+   display:flex;
+   align-items: center;
+   padding-bottom:2rem ;
+}
+.btn-trash{
+   color:var(--first-color);
+}
+.price-color{
+   color:var(--first-color); 
+}
 /*-------------- Buzo -----------------*/
 .section-flitro{
    display: grid;
