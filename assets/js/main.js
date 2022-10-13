@@ -140,8 +140,7 @@ function cartFunctionality() {
       button.addEventListener('click', (e) => {
          
          const id = parseInt(e.target.parentElement.id)
-         contCarrito++
-         contItems++
+        
          
        
    const selectedProduct = items.find((item) => item.id === id)
@@ -155,18 +154,20 @@ function cartFunctionality() {
                alert('No hay stock')
             } else {
                cart[index].cantidad++
-
+               contCarrito++
+                contItems++
             }
          } else {
             selectedProduct.cantidad = 1
             cart.push(selectedProduct)
+            contCarrito=contCarrito+1
+                contItems=contItems+1
          }
         
       
          showProductsInCart(cart)
          counter.innerHTML=contCarrito
          countItems.innerHTML=contItems
-         cartTotal.innerHTML=priceItems
          console.log(counter);
       })
      
