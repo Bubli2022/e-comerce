@@ -574,6 +574,7 @@ ul {
    padding: 2rem 1rem 1rem 1rem;
 }
 
+
 /*===========================BREAKPOINTS=============================*/
 @media screen and (max-width: 320px) {
    .container {
@@ -617,12 +618,12 @@ ul {
     right: 10px;
     top: 244px;
 }
+.footer--section {
 
-   .footer--section {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-   }
+   position: relative;
+   right: -55px;
+}
+
    footer {
       position: relative;
       top: 108px;
@@ -750,6 +751,15 @@ ul {
   .div-texto__buzo>h4{
    font-size: 2rem;
   }
+
+  .footer--section {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   position: relative;
+   right: 2px;
+}
+
 }
 
 @media screen and (min-width: 992px){
