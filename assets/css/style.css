@@ -497,7 +497,7 @@ button {
    font-size: 20px;
    position: absolute;
    right: 10px;
-   top: 300px;
+   top: 200px;
    background-color: var(--body-color);
    color: var(--title-color);
    box-shadow: 0 4px 12px hsl(206deg 4% 4% / 20%);
