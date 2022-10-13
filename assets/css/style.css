@@ -300,8 +300,8 @@ button {
 /*===========================CART===============================*/
 .bx-x {
    position: relative;
-   right: -155px;
-   top: 45px;
+   right: -125px;
+   top: 32px;
    font-size: 2rem;
    transition: 0.5s;
 }
@@ -392,9 +392,8 @@ button {
    align-items: center;
    padding-top: 2rem;
 }
-.elements-cart{
- padding-top: 3rem;
- display: initial;
+.elements-cart {
+   display: initial;
 }
 .elements-cart.open{
    display: none;
@@ -424,12 +423,13 @@ button {
    flex-direction: row;
    justify-content: space-around;
    position: relative;
-   top: 100px;
+   top: 20px;
 }
-.checkout--btn {  
+.checkout--btn {
    right: 46px;
    top: 510px;
-}
+   margin: 3rem 0 0 0;
+} 
 .producto-aside{
    display:flex;
    align-items: center;
