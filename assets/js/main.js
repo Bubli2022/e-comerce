@@ -4,7 +4,7 @@ const items = [
       name: 'Hoodies',
       price: 14.0,
       image: 'assets/images/featured1.png',
-      category: 'hoodies',
+      category: 'Hoodies',
       quantity: 10,
    },
    {
@@ -12,7 +12,7 @@ const items = [
       name: 'Shirts',
       price: 24.0,
       image: 'assets/images/featured2.png',
-      category: 'shirts',
+      category: 'Shirts',
       quantity: 15,
    },
    {
@@ -98,7 +98,7 @@ shopCloseIcon.addEventListener('click', () => {
 
 /* ----------------------MOSTRAR LISTADO DE PRODUCTOS--------------------------- */
 // contenedor.innerHTML = "html"
-const showProducts = () => {
+/*const showProducts = () => {
    const productContainer = document.getElementById('section-buzo')
 
    let fragment = ``
@@ -123,7 +123,7 @@ const showProducts = () => {
    productContainer.innerHTML = fragment
 
    cartFunctionality()
-}
+}*/
 
 /* ---------------------AÑADE FUNCIONALIDAD A LOS BOTONES EN LOS PRODUCTOS--------------------------- */
 function cartFunctionality() {
@@ -180,10 +180,11 @@ function showProductsInCart(cart) {
    const getTotal=document.getElementById("cart--total")
    let counterPrice=0;
    const elementCart=document.getElementById("elements-cart")
-   let sumaux=0;
+ 
    const carrito=document.getElementById("show-products")
    let carro=" "
    cart.forEach((x) => {
+      
        carro += `
        <article class="producto-aside">
               <img class="img-cart"  src=" ${x.image}" alt="">
@@ -201,9 +202,9 @@ function showProductsInCart(cart) {
                
        </article>
    `
-  
+   
    })
-   console.log(sumaux);
+   
    carrito.innerHTML=carro
    if (carro.length>1){
       elementCart.classList.add('open')
@@ -211,14 +212,103 @@ function showProductsInCart(cart) {
 
   
   cart.forEach((y)=>{
-     counterPrice+=+ y.price * y.cantidad
+     counterPrice+= y.price * y.cantidad
   })
   counterPrice="$"+counterPrice
   getTotal.innerHTML=counterPrice
 }
 
+/*--------------boton-filter---------------*/
+/*function showOneProduct(cart){
+ 
+   const productId=document.getElementById
+   ("section-buzo")
+   const Bn = document.querySelectorAll(".Bn")
+  Bn.forEach((i)=>{
+   
+   i.addEventListener("click",(e)=>{
+     
+   console.log(e.id);
+
+
+   })
+
+  }) 
+}*/
+const productos = () => {
+   const sectionProduct = document.getElementById("section-buzo")
+
+   const Bn = document.querySelectorAll(".Bn")
+   let fragment = " "
+   Bn.forEach((i) => {
+       i.addEventListener("click", () => {
+           fragment=" "
+           items.forEach(product => {
+               if (product.category === i.id) {
+                   fragment += `
+                   <div class="div-buzo-solo">
+                   <div class="div-buzo">
+                    <div class="product-card" id="${product.id}">
+                    <div class="cart__box" >
+                    <img src="${product.image}" alt="" class="img-buzo-lista">
+                  </div class="text-descript-info"> 
+                        <p>${product.name}</p>
+                        <p>$${product.price}</p>
+                        <button class="button-buzo">
+                        +
+                        </button>
+                    </div>
+                   </div> 
+                   </div> 
+                     `
+               } else if (i.id === "All" ) {
+                   fragment += `
+                   <div class="div-buzo">
+                    <div class="product-card" id="${product.id}">
+                    <div class="cart__box" >
+                    <img src="${product.image}" alt="" class="img-buzo-lista">
+                  </div class="text-descript-info"> 
+                        <p>${product.name}</p>
+                        <p>$${product.price}</p>
+                        <button class="button-buzo">
+                        +
+                        </button>
+                    </div>
+                   </div> 
+                     `
+               
+               }
+           })
+           
+       sectionProduct.innerHTML = fragment
+       cartFunctionality()
+       })
+       
+   })
+items.forEach(product => {
+           fragment += `
+           <div class="div-buzo">
+            <div class="product-card" id="${product.id}">
+            <div class="cart__box" >
+            <img src="${product.image}" alt="" class="img-buzo-lista">
+          </div class="text-descript-info"> 
+                <p>${product.name}</p>
+                <p>$${product.price}</p>
+                <button class="button-buzo">
+                +
+                </button>
+            </div>
+           </div> 
+             `
+   })
+
+sectionProduct.innerHTML = fragment
+cartFunctionality()
+}
 
 document.addEventListener('DOMContentLoaded', () => {
    loadComponent()
-   showProducts()
+   /*showProducts()*/
+   productos ()
+
 })
