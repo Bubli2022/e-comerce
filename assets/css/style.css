@@ -251,6 +251,7 @@ h1 {
 .home-description {
    margin-bottom: 1.5rem;
    color: var(--text-color);
+   max-width: 415px;
 }
 .home-price {
    display: inline-block;
@@ -394,6 +395,10 @@ button {
 }
 .elements-cart {
    display: initial;
+}
+#parraph--cart {
+   padding: 0.5rem;
+   max-width: 312px;
 }
 .elements-cart.open{
    display: none;
