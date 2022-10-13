@@ -502,7 +502,7 @@ button {
    font-size: 20px;
    position: absolute;
    right: 10px;
-   top: 200px;
+   top: 186px;
    background-color: var(--body-color);
    color: var(--title-color);
    box-shadow: 0 4px 12px hsl(206deg 4% 4% / 20%);
@@ -590,6 +590,10 @@ ul {
    }
 }
 @media screen and (min-width: 450px) {
+.section-flitro{
+   font-size: 1.2rem;
+}
+
    .img-conteiner {
       width: auto;
       height: 500px;
@@ -605,6 +609,15 @@ ul {
 }
 
 @media screen and (min-width: 600px) {
+   .img-buzo-lista {
+      height: 260px;
+  }
+.button-buzo{
+   position: absolute;
+    right: 10px;
+    top: 244px;
+}
+
    .footer--section {
       display: flex;
       flex-direction: row;
@@ -626,7 +639,13 @@ ul {
       align-items: center;
       max-width: 680px;
       margin: 0;
+      position: relative;
+      right: -60px;
+      top: 13px;
      }
+     .img-buzo-lista {
+      height: 200px;
+  }
      .section-buzo{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -635,6 +654,13 @@ ul {
       max-width: 300px;
       padding: 60px 0 0 0;
      } 
+
+     .button-buzo {
+      position: absolute;
+      right: 10px;
+      top: 185px;
+  }
+
      .div-buzo{
        margin: auto;
        justify-content: start;
@@ -642,6 +668,10 @@ ul {
   .home{
    padding: 0 10rem;
   }
+  .home__button {
+   box-shadow: 0 12px 24px hsl(0deg 0% 10% / 20%);
+   min-width: 168px;
+}
   .icon-box{
    padding-right: 6rem;
   }
@@ -654,7 +684,15 @@ ul {
    }
    .home-data {
       margin-top: 130px;
+      position: relative;
+    right: -120px;
    }
+
+   .img-conteiner {
+      position: relative;
+      right: -87px;
+  }
+
    .nav-menu {
       background-color: rgb(0 0 0 / 0%);
       position: fixed;
@@ -714,25 +752,91 @@ ul {
   }
 }
 
+@media screen and (min-width: 992px){
+   .section-flitro{
+      position: relative;
+      right: -154px;
+      top: 16px;
+      
+   }
+   
+   .home-data {
+      margin-top: 130px;
+      position: relative;
+      right: -24px;
+  }
+   .section-buzo {
+      position: relative;
+      right: -28px;
+  }
+  .button-buzo {
+   position: absolute;
+   right: 10px;
+   top: 248px;
+}
+
+   .img-buzo-lista {
+      height: 260px;
+  }
+}
+
 @media screen and (min-width: 1130px){
+   .icon-box {
+      position: relative;
+      right: -188px;
+  }
+
    .section-flitro{
       max-width: 860px;
       margin-left: 15%;
       margin-top: 4rem;
+      position: relative;
+      right: -59px;
+      top: 11px;
+      font-size: 1.4rem;
    }
-   .section-buzo{
-      gap: 8rem;
+
+   .home-data {
+      margin-top: 130px;
+      position: relative;
+      right: 6px;
+  }
+
+   .section-buzo {
+      gap: 6rem;
       text-align: center;
       display: flex;
       margin-left: 5%;
-   }
+      right: -42px;
+      position: relative;
+  }
+
+  .button-buzo {
+   position: absolute;
+   right: 10px;
+   top: 270px;
+}
+
    .bar-nav{
       padding: 0 10rem;
    }
    .nav-menu-item1 {
       padding-left: 10rem;
    }
-  .img-buzo-lista{
-   height: 300px;
+   .img-buzo-lista {
+      height: 280px;
   }
 }
+
+@media screen and (min-width: 1500px){
+   .section-buzo{
+   right: -110px;
+   position: relative;
+   }
+.section-flitro{ 
+   position: relative;
+    right: -96px;
+    top: 11px;
+}
+}
+
