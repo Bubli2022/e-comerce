@@ -623,6 +623,7 @@ ul {
       position: relative;
       right: -60px;
       top: 13px;
+      
      }
      .img-buzo-lista {
       height: 200px;
@@ -817,6 +818,9 @@ ul {
    }
    .img-buzo-lista {
       height: 280px;
+  }
+  .div-buzo-solo{
+   margin-left: 30rem;
   }
 }
 

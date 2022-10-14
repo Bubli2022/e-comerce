@@ -72,7 +72,7 @@ const headerMenu = document.getElementById('header')
 
 window.addEventListener('scroll', function () {
    const ubicacionActual = window.scrollY
-  
+ 
    if (ubicacionPrincipal >= ubicacionActual) {
       headerMenu.classList.remove('scrollear')
    } else {
@@ -124,14 +124,87 @@ shopCloseIcon.addEventListener('click', () => {
 
    cartFunctionality()
 }*/
+/*--------------boton-filter---------------*/
+
+const productos = () => {
+   const sectionProduct = document.getElementById("section-buzo")
+   
+   const Bn = document.querySelectorAll(".Bn")
+   let fragment = " "
+   Bn.forEach((i) => {
+       i.addEventListener("click", () => {
+           fragment=" "
+           items.forEach(product => {
+               if (product.category === i.id) {
+                   fragment += `
+                   <div class="div-buzo-solo">
+                   <div class="div-buzo">
+                    <div class="product-card" id="${product.id}">
+                    <div class="cart__box" >
+                    <img src="${product.image}" alt="" class="img-buzo-lista">
+                  </div class="text-descript-info"> 
+                        <p>${product.name}</p>
+                        <p>$${product.price}</p>
+                        <button class="button-buzo">
+                        +
+                        </button>
+                    </div>
+                   </div> 
+                   </div> 
+                     `
+               } else if (i.id === "All" ) {
+                   fragment += `
+                   <div class="div-buzo">
+                    <div class="product-card" id="${product.id}">
+                    <div class="cart__box" >
+                    <img src="${product.image}" alt="" class="img-buzo-lista">
+                  </div class="text-descript-info"> 
+                        <p>${product.name}</p>
+                        <p>$${product.price}</p>
+                        <button class="button-buzo">
+                        +
+                        </button>
+                    </div>
+                   </div> 
+                     `
+               
+               }
+           })
+           
+       sectionProduct.innerHTML = fragment
+       cartFunctionality()
+       })
+       
+   })
+items.forEach(product => {
+           fragment += `
+           <div class="div-buzo">
+            <div class="product-card" id="${product.id}">
+            <div class="cart__box" >
+            <img src="${product.image}" alt="" class="img-buzo-lista">
+          </div class="text-descript-info"> 
+                <p>${product.name}</p>
+                <p>$${product.price}</p>
+                <button class="button-buzo">
+                +
+                </button>
+            </div>
+           </div> 
+             `
+   })
+
+sectionProduct.innerHTML = fragment
+cartFunctionality()
+}
 
 /* ---------------------AÑADE FUNCIONALIDAD A LOS BOTONES EN LOS PRODUCTOS--------------------------- */
+const cart = []
+let contCarrito=0;
+let contItems=0;
 function cartFunctionality() {
   
    const btns = document.querySelectorAll('.button-buzo')
-   const cart = []
-   let contCarrito=0;
-   let contItems=0;
+  
    const counter=document.getElementById("cart-counter")
    const countItems=document.getElementById("count--items")
   
@@ -212,99 +285,13 @@ function showProductsInCart(cart) {
 
   
   cart.forEach((y)=>{
-     counterPrice+= y.price * y.cantidad
+     counterPrice+= y.cantidad * y.price
   })
   counterPrice="$"+counterPrice
   getTotal.innerHTML=counterPrice
 }
 
-/*--------------boton-filter---------------*/
-/*function showOneProduct(cart){
- 
-   const productId=document.getElementById
-   ("section-buzo")
-   const Bn = document.querySelectorAll(".Bn")
-  Bn.forEach((i)=>{
-   
-   i.addEventListener("click",(e)=>{
-     
-   console.log(e.id);
 
-
-   })
-
-  }) 
-}*/
-const productos = () => {
-   const sectionProduct = document.getElementById("section-buzo")
-
-   const Bn = document.querySelectorAll(".Bn")
-   let fragment = " "
-   Bn.forEach((i) => {
-       i.addEventListener("click", () => {
-           fragment=" "
-           items.forEach(product => {
-               if (product.category === i.id) {
-                   fragment += `
-                   <div class="div-buzo-solo">
-                   <div class="div-buzo">
-                    <div class="product-card" id="${product.id}">
-                    <div class="cart__box" >
-                    <img src="${product.image}" alt="" class="img-buzo-lista">
-                  </div class="text-descript-info"> 
-                        <p>${product.name}</p>
-                        <p>$${product.price}</p>
-                        <button class="button-buzo">
-                        +
-                        </button>
-                    </div>
-                   </div> 
-                   </div> 
-                     `
-               } else if (i.id === "All" ) {
-                   fragment += `
-                   <div class="div-buzo">
-                    <div class="product-card" id="${product.id}">
-                    <div class="cart__box" >
-                    <img src="${product.image}" alt="" class="img-buzo-lista">
-                  </div class="text-descript-info"> 
-                        <p>${product.name}</p>
-                        <p>$${product.price}</p>
-                        <button class="button-buzo">
-                        +
-                        </button>
-                    </div>
-                   </div> 
-                     `
-               
-               }
-           })
-           
-       sectionProduct.innerHTML = fragment
-       cartFunctionality()
-       })
-       
-   })
-items.forEach(product => {
-           fragment += `
-           <div class="div-buzo">
-            <div class="product-card" id="${product.id}">
-            <div class="cart__box" >
-            <img src="${product.image}" alt="" class="img-buzo-lista">
-          </div class="text-descript-info"> 
-                <p>${product.name}</p>
-                <p>$${product.price}</p>
-                <button class="button-buzo">
-                +
-                </button>
-            </div>
-           </div> 
-             `
-   })
-
-sectionProduct.innerHTML = fragment
-cartFunctionality()
-}
 
 document.addEventListener('DOMContentLoaded', () => {
    loadComponent()
